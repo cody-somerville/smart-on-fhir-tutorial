@@ -25,9 +25,26 @@
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script>
+      scopes = [
+        "patient/Patient.read",
+        "patient/Observation.read",
+        "patient/Appointment.read",
+        "patient/Binary.read",
+        "patient/Condition.read",
+        "patient/DiagnosticReport.read",
+        "patient/DocumentReference.read",
+        "patient/Encounter.read",
+        "patient/MedicationStatement.read",
+        "patient/Procedure.read",
+        "patient/ProcedureRequest.read",
+        "launch",
+        "online_access",
+        "openid",
+        "profile"
+      ]
       FHIR.oauth2.authorize({
-        'client_id': '<enter your client id here>',
-        'scope':  'patient/Patient.read patient/Observation.read launch online_access openid profile'
+        'client_id': '279e439e-f44b-4c6f-aee5-bdc0a67013d1U',
+        'scope':  scopes.join(' ')
       });
     </script>
     <div class="spinner">
